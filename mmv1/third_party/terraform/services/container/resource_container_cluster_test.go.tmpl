@@ -14081,7 +14081,7 @@ func TestAccContainerCluster_autopilotPrivateRegistry(t *testing.T) {
 	})
 }
 
-func testAccContainerCluster_withAutopilotPrivateRegistryEnabled(secretID, clusterName, nodePoolName, networkName, subnetworkName string) string {
+func testAccContainerCluster_withAutopilotPrivateRegistryEnabled(secretID, clusterName, networkName, subnetworkName string) string {
 	return fmt.Sprintf(`
 data "google_project" "test_project" {}
 
@@ -14130,10 +14130,10 @@ resource "google_container_cluster" "primary" {
 
   deletion_protection = false
 }
-`, secretID, clusterName, nodePoolName, networkName, subnetworkName)
+`, secretID, clusterName, networkName, subnetworkName)
 }
 
-func testAccContainerCluster_withAutopilotPrivateRegistryDisabled(secretID, clusterName, nodePoolName, networkName, subnetworkName string) string {
+func testAccContainerCluster_withAutopilotPrivateRegistryDisabled(secretID, clusterName, networkName, subnetworkName string) string {
 	return fmt.Sprintf(`
 data "google_project" "test_project" {}
 
